@@ -57,7 +57,9 @@ services:
       - ${DIAL_DIR:-.}/core:/opt/config
       - ${DIAL_DIR:-.}/core-logs/:/app/log
       - ${DIAL_DIR:-.}/core-data/:/app/data
-
+# option is relevant for local development on WSL
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
   adapter-dial:
     platform: linux/amd64
     image: epam/ai-dial-adapter-dial:development
